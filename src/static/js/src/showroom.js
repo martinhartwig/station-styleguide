@@ -1,4 +1,4 @@
-import { iframeResizer } from 'iframe-resizer';
+//import { iframeResizer } from 'iframe-resizer';
 import hljs from 'highlight.js';
 
 $('[data-showroom-target]').each(function(index){
@@ -69,7 +69,7 @@ function getDimensionsForDevice(device) {
     }
 }
 const iframe = $('[data-resize-preview]').first().parent().parent().siblings('iframe').get(0);
-iframeResizer({/* autoResize: false, log: true */}, iframe)
+//iframeResizer({/* autoResize: false, log: true */}, iframe)
 $('[data-resize-preview]').each(function(index) {
     var $el = $(this);
     $el.on('click', function(event){
