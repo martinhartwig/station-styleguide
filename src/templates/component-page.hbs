@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{componentName}}</title>
+        <meta name="charset" content="utf-8" />
+        <link rel="stylesheet" type="text/css" href="{{_staticStyleGuideResourcesPath}}/css/highlightjs.github-gist.css">
+        <link rel="stylesheet" type="text/css" href="{{_staticStyleGuideResourcesPath}}/css/styleguide.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+    </head>
+    <body>
+        <div class="sg-wrapper">
+
+            <nav class="sg-nav-components">
+                <h1 class="sg-main-title">Styleguide</h1>
+                {{{sitemap currentUrl=pathComponentPage}}}
+            </nav>
+
+            <section class="sg-component">
+                <article class="sg-documentation">
+                    <div class="sg-documentation__header">
+                        <small>{{_componentpath}}</small>
+                        <h1>{{componentName}}</h1>
+                    </div>
+                    <div class="sg-documentation__body">
+                        {{{md filenameMarkdown}}}
+                    </div>
+                </article>
+
+                <div class="sg-preview__container">
+                    <ul class="sg-tabslist sg-devices"><!--
+                        --><li class="sg-tabslist__item sg-devices__item"><a class="sg-tabslist__link sg-devices__link" href="{{{filenamePreview}}}" target="_blank"><i class="material-icons" title="In neuem Fenster &ouml;ffnen">launch</i></a></li><!--
+                        --><li class="sg-tabslist__item sg-devices__item"><button class="sg-tabslist__link sg-devices__link" data-resize-preview="mobile"><i class="material-icons" title="Smartphone-Gr&ouml;ße">smartphone</i></button></li><!--
+                        --><li class="sg-tabslist__item sg-devices__item"><button class="sg-tabslist__link sg-devices__link" data-resize-preview="tablet"><i class="material-icons" title="Tablet-Gr&ouml;ße">tablet_mac</i></button></li><!--
+                        --><li class="sg-tabslist__item sg-devices__item"><button class="sg-tabslist__link sg-devices__link" data-resize-preview="desktop"><i class="material-icons" title="Desktop-Gr&ouml;ße">desktop_windows</i></button></li><!--
+                    --></ul>
+                    <iframe class="sg-scrollpanel" src="{{filenamePreview}}" name="iframe"></iframe>
+                </div>
+
+                <div class="sg-showroom-container">
+                    <div class="sg-showroom-tabs">
+                        <ul class="sg-tabslist">
+                            <li class="sg-tabslist__item sg-tabslist__item--active"><button class="sg-tabslist__link" data-showroom-target="source-html">HTML</button></li><!--
+                            --><li class="sg-tabslist__item"><button class="sg-tabslist__link" data-showroom-target="source-hbs">Template</button></li><!--
+                            --><li class="sg-tabslist__item"><button class="sg-tabslist__link" data-showroom-target="source-json">Data</button></li><!--
+                            --><li class="sg-tabslist__item"><button class="sg-tabslist__link" data-showroom-target="references">References</button></li>
+                        </ul>
+                    </div>
+                    <div class="sg-showroom sg-scrollpanel sg-showroom--active" data-showroom="source-html">
+                        {{{embed src=filenameSourceHtml}}}
+                    </div>
+                    <div class="sg-showroom sg-scrollpanel" data-showroom="source-hbs">
+                        {{{embed src=filenameSourceHbs}}}
+                    </div>
+                    <div class="sg-showroom sg-scrollpanel" data-showroom="source-json">
+                        {{{embed src=filenameSourceJson}}}
+                    </div>
+                    <div class="sg-showroom sg-scrollpanel" data-showroom="references">
+                        Benutzt:
+                        <ul class="sg-references-list">
+                            {{usesPartials partialName=componentName allPartials=allPartials}}
+                        </ul>
+                        Wird benutzt von:
+                        <ul class="sg-references-list">
+                            {{usedByPartials partialName=componentName allPartials=allPartials}}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="{{_staticStyleGuideResourcesPath}}/js/styleguide.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{componentName}}</title>
+        <meta name="charset" content="utf-8" />
+        <link rel="stylesheet" type="text/css" href="styleguide/static/css/highlightjs.github-gist.css">
+        <link rel="stylesheet" type="text/css" href="styleguide/static/css/styleguide.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+    </head>
+    <body>
+        <div class="sg-wrapper">
+
+            <nav class="sg-nav-components">
+                <h1 class="sg-main-title">Styleguide</h1>
+                {{{sitemap currentUrl=pathComponentPage}}}
+            </nav>
+
+
+            <h1>Sitemap</h1>
+            {{{sitemap}}}
+
+        </div>
+        <script src="styleguide/static/js/styleguide.js"></script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "station-styleguide-generator",
+  "version": "1.2.5",
+  "description": "Web Pattern Library Generator",
+  "author": "Martin Hartwig <martin@silo451.com>",
+  "license": "MIT",
+  "repository": "github:martinhartwig/station-styleguide-generator",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "LICENSE",
+    "dist"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "capture-chrome": "^3.0.0",
+    "del": "^3.0.0",
+    "glob": "^7.1.3",
+    "globby": "^9.0.0",
+    "gulp": "^4.0.0",
+    "gulp-append-prepend": "^1.0.6",
+    "gulp-data": "^1.3.1",
+    "gulp-flatmap": "^1.0.0",
+    "gulp-hb": "^7.0.1",
+    "gulp-markdown": "^3.0.0",
+    "gulp-rename": "^1.4.0",
+    "handlebars": "^4.0.12",
+    "helper-md": "^0.2.2",
+    "highlight.js": "^9.13.1",
+    "iframe-resizer": "^3.6.4",
+    "js-beautify": "^1.8.9",
+    "lodash": "^4.17.11",
+    "marked": "^0.6.0",
+    "puppeteer": "^1.11.0",
+    "yoctodelay": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack-stream": "^5.2.1"
+  }
+}
